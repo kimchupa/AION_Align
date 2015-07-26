@@ -1,0 +1,337 @@
+﻿<?xml version="1.0" encoding="UTF-16" ?>
+<HtmlPages>
+<!-- chat command help -->
+
+  <HtmlPage name="list">
+    <Contents cdata="true">
+	  <html>
+		<body paraspace="7">
+			<p><font color="#F5C347">Chat Commands</font></p>
+			<p> </p>
+			<p><a href="chat">Changing Chat Mode</a></p>
+			<p><a href="party">Group</a></p>
+			<p><a href="force">Alliance</a></p>
+			<p><a href="mentor">Mentoring</a></p>
+			<p><a href="looting">Loot Distribution</a></p>
+			<p><a href="guild">Legion</a></p>
+			<p><a href="friend">Friend List</a></p>
+			<p><a href="normal">General Command</a></p>		
+
+		</body>
+	</html>
+	</Contents> 
+  </HtmlPage>
+ <HtmlPage name="looting">
+    <Contents cdata="true">
+	  <html>
+		<body>
+			<p><font color="#F5C347">/Dice [Number], /Roll [Number]</font></p>
+<p>Rolls the dice within a set range. Default is 100. You can choose a number between 1 and 1000. Only Group, Alliance, or nearby characters can see the results.</p>
+<p>Ex) /dice 100</p>
+<p> </p>
+			<p><font color="#F5C347">/GroupSplit [Amount]</font></p>
+<p>Distributes the entered amount equally to all group members.</p>
+<p>Ex) /groupsplit 1000 </p>
+<p> </p>
+			<p><font color="#F5C347">/ForceSplit [Amount]</font></p>
+<p>Distributes the entered amount equally to all Alliance members.</p>
+<p>Ex) /forcesplit 23000</p>
+<p> </p>
+			<p><font color="#F5C347">/Free</font></p>
+<p>Group members obtain looted items freely.</p>
+<p> </p>
+			<p><font color="#F5C347">/RoundRobinLoot, /InOrder</font></p>
+<p>Group members obtain looted items in a round-robin manner.</p>
+<p> </p>
+			<p><font color="#F5C347">/GroupLeaderLoot, /Captain</font></p>
+<p>The group leader loots all of the items.</p>
+<p> </p>
+			<p> </p><p> </p><p><a href="list">Go to List</a></p> <p> </p>
+		</body>
+	</html>
+	</Contents> 
+  </HtmlPage>
+
+ <HtmlPage name="party">
+    <Contents cdata="true">
+	  <html>
+		<body>
+			<p><font color="#F5C347">/RecruitGroupMember [Introduction]</font></p>
+<p>Creates a &lt;Recruit Group&gt; link in the chat window. When a user right-clicks this link, a link containing the level and class information of the user is sent to you as a Whisper, which you can then us to decline or invite the user to your group. Users can also click the &lt;Recruit Group&gt; link to view the group's information.</p>
+<p>Ex) /RecruitGroupMember Looking for a Lv 50 Sorcerer willing to go to Dark Poeta.</p>
+<p> </p>
+			<p><font color="#F5C347">/ApplyForGroup [Introduction]</font></p>
+<p>Creates an &lt;Apply For Group&gt; link in the chat window. When the group leader right-clicks this link, an invitation to the group gets sent automatically. A user can click the &lt;Apply For Group&gt; link and view the author's information.</p>
+<p>Ex) /ApplyForGroup Lv 50 Assassin looking for a Dredgion group.</p>
+<p> </p>
+			<p><font color="#F5C347">/InvitetoGroup [CharacterName], /invite [CharacterName]</font></p>
+<p>Invites a character to the group.</p>
+<p>Ex) /invite Jarumonerk (Group Leader only)</p>
+<p> </p>
+			<p><font color="#F5C347">/Leavegroup, /Leave</font></p>
+<p>Leaves the group you have joined.</p>
+<p> </p>
+			<p><font color="#F5C347">/Kick CharacterName</font></p>
+<p>Removes a group member from the group. (Group leaders only)</p>
+<p>Ex) /Kick Shuma</p>
+<p> </p>
+			<p><font color="#F5C347">/Brand 1-14</font></p>
+<p>Displays a sign above the head of the selected target. (Group or Alliance leaders only)</p>
+<p>Ex) /Sign 6</p>
+<p> </p>
+			<p><font color="#F5C347">/SelectBrand 1-14</font></p>
+<p>Selects the target on which the sign is displayed.</p>
+<p>Ex) /selectbrand 6</p>
+<p> </p>
+			<p><font color="#F5C347">/Alert [Message] </font></p>
+<p>Changes to Alert chat mode. Sends the message to the chat window and the HUD of all group members. (Group leaders only)</p>
+<p>Ex) /alert Everyone get ready to charge! </p>
+<p> </p>
+			<p><font color="#F5C347">/Group, /G</font></p>
+<p>Changes to group chat mode. Only your group receives group chat.</p>
+<p> </p>
+			<p><font color="#F5C347">/GG [Message]</font></p>
+<p>Sends a message to your group without changing chat modes.</p>
+<p> </p>
+			<p> </p><p> </p><p><a href="list">Go to List</a></p> <p> </p>
+		</body>
+	</html>
+	</Contents> 
+  </HtmlPage>
+
+ <HtmlPage name="force">
+    <Contents cdata="true">
+	  <html>
+		<body>
+			<p><font color="#F5C347">/RecruitAllianceMember [Introduction]</font></p>
+<p>Creates a link displayed as &lt;Recruit Alliance&gt;. When a user right-clicks the &lt;Recruit Alliance&gt; link, a link containing the level and class information of the user is sent to you as a Whisper, then you can decline or invite the user to your Alliance. A user can click the &lt;Recruit Alliance&gt; link and view the Alliance's information.</p>
+<p>Ex) /RecruitAllianceMember Looking for an Alliance to attack the Dredgion.</p>
+<p> </p>
+			<p><font color="#F5C347">/ApplyForAlliance [Introduction]</font></p>
+<p>Creates a link displayed as &lt;Apply For Alliance&gt;. When a user right-clicks the &lt;Apply For Alliance&gt; link, an invitation to the Alliance gets sent automatically. A user can click the &lt;Apply For Alliance&gt; link and view the author's information.</p>
+<p>Ex) /ApplyForAlliance Lv 50 Marksman looking for a fortress battle force.</p>
+<p> </p>
+			<p><font color="#F5C347">/Leave</font></p>
+<p>Leaves the Alliance you have joined.</p>
+<p> </p>
+			<p><font color="#F5C347">/Kick [CharacterName]</font></p>
+<p>Kicks a member out of the Alliance. (Alliance Leaders only)</p>
+<p>Ex) /kick Mew </p>
+<p> </p>
+			<p><font color="#F5C347">/Appoint [CharacterName]</font></p>
+<p>Appoints a character as the Alliance Vice Captain. (Alliance Leaders only)</p>
+<p>Ex) /appoint Mew </p>
+<p> </p>
+			<p><font color="#F5C347">/Ready</font></p>
+<p>Requests the Alliance members to confirm if their battle preparations are complete. (Alliance Leaders only)</p>
+<p> </p>
+			<p><font color="#F5C347">/Alert [Message] </font></p>
+<p>Changes to Alert chat mode. Sends the message to the chat window and the HUD of all Alliance members. (Alliance leaders only)</p>
+<p> </p>
+			<p><font color="#F5C347">/Alliance, /A</font></p>
+<p>Changes to Alliance chat mode. The entire Alliance receives Alliance chat.</p>
+<p> </p>
+			<p><font color="#F5C347">/AA [Message]</font></p>
+<p>Send a message to the Alliance without changing chat modes.</p>
+<p> </p>
+			<p> </p><p> </p><p><a href="list">Go to List</a></p> <p> </p>
+		</body>
+	</html>
+	</Contents> 
+  </HtmlPage>
+
+
+ <HtmlPage name="mentor">
+    <Contents cdata="true">
+          <html>
+                <body>
+                        <p><font color="#F5C347">/Start Mentoring</font></p>
+<p>Begins mentoring a group member who is at least 10 levels lower than you.</p> 
+<p>Mentors do not get XP, Kinah, or common items, but the mentored Daeva will get the normal amount of these things. There is no penalty for playing with a mentor like there is for playing with a non-mentoring higher-level character.</p> 
+<p> </p>
+                        <p><font color="#F5C347">/End Mentoring</font></p>
+<p>Stops mentoring.</p> 
+<p> </p>
+                        <p><font color="#F5C347">/Recruit Mentor [your text here]</font></p>
+<p>Type either of these commands, followed by a space, and then your personalized message, to create a &lt;Recruit Mentor Group&gt; link in the chat window. Other users can click the link to view information about your group and apply for it. Note that copy/pasting the slash command will not work.</p>
+<p>The applicant's level and class information are sent to you as a Whisper, and you can then choose to invite or decline the player. &lt;Recruit Mentor Group&gt; posts are displayed in the Find Group window regardless of level.</p>
+<p>ex) /Recruit Mentor Please help me with a difficult quest.</p>
+<p> </p>
+                        <p><font color="#F5C347">/Apply As Mentor [your text here]</font></p>
+<p>Type either of these commands, followed by a space, and then your personalized message, to create an &lt;Apply as Mentor Group&gt; link in the chat window. Other users can click the link to view poster information and apply for the group. Note that copy/pasting the slash command will not work.</p>
+<p>&lt;Apply as Mentor Group&gt; posts are displayed in the Find Group window regardless of level.</p>
+<p>ex) /Apply as Mentor I'm available to help with difficult quests.</p>
+<p> </p>
+			<p> </p><p> </p><p><a href="list">Go to List</a></p> <p> </p>
+		</body>
+	</html>
+	</Contents> 
+  </HtmlPage>
+
+<HtmlPage name="guild">
+    <Contents cdata="true">
+	  <html>
+		<body>
+			<p><font color="#F5C347">/InvitetoLegion [CharacterName]</font></p>
+<p>Invites a character to the Legion. </p>
+<p>Ex) /invitetolegion Mew</p>
+<p> </p>
+			<p><font color="#F5C347">/LeaveLegion</font></p>
+<p>Leaves the Legion you had joined.</p>
+<p> </p>
+			<p><font color="#F5C347">/KickfromLegion [CharacterName], /gban [CharacterName]</font></p>
+<p>Kicks a character out of the Legion.</p>
+<p>Ex) /kickfromlegion Shuma </p>
+<p> </p>
+			<p><font color="#F5C347">/BrigadeGeneral [CharacterName], /gleader [CharacterName]</font></p>
+<p>Entrusts a character with the authority of Brigade General.</p>
+<p>Ex) /brigadegeneral Mew </p>
+<p> </p>
+			<p><font color="#F5C347">/LegionNotice, /gnotice</font></p>
+<p>Shows the content of the Legion notice.</p>
+<p> </p>
+			<p><font color="#F5C347">/lpromote [CharacterName], /gpromote [CharacterName]</font></p>
+<p>Raises the rank of a Legion member.</p>
+<p>Ex) /Promote Mew </p>
+<p> </p>
+			<p><font color="#F5C347">/Demote [CharacterName], /gdemote [CharacterName]</font></p>
+<p>Demotes Legion member.</p>
+<p>Ex) /Demote Mew </p>
+<p> </p>
+			<p><font color="#F5C347">/Legion, /L</font></p>
+<p>Changes to Legion chat mode. Your entire Legion receives Legion chat.</p>
+<p> </p>
+			<p><font color="#F5C347">/LL [Message]</font></p>
+<p>Sends a message to your Legion without changing chat modes.</p>
+<p> </p>
+			<p> </p><p> </p><p><a href="list">Go to List</a></p> <p> </p>
+		</body>
+	</html>
+	</Contents> 
+  </HtmlPage>
+
+<HtmlPage name="friend">
+    <Contents cdata="true">
+	  <html>
+		<body>
+			<p><font color="#F5C347">/Who [CharacterName]</font></p>
+<p>Checks a character's information in the Search window. </p>
+<p>Ex) /who Mew</p>
+<p> </p>
+			<p><font color="#F5C347">/Friend [CharacterName]</font></p>
+<p>Adds an online character to your Friend List.</p>
+<p>Ex) /friend Mew</p>
+<p> </p>
+			<p><font color="#F5C347">/DeleteFriend [CharacterName]</font></p>
+<p>Deletes a character from your Friend List.</p>
+<p>Ex) /deletefriend Mew</p>
+<p> </p>
+			<p><font color="#F5C347">/Block [CharacterName]</font></p>
+<p>Blocks a character from sending Whispers to you. </p>
+<p>Ex) /block Shuma</p>
+<p> </p>
+			<p><font color="#F5C347">/Unblock [CharacterName], /Undo [CharacterName]</font></p>
+<p>Deletes a character from your Block List.</p>
+<p>Ex) /undo Shuma</p>
+<p> </p>
+
+
+			<p> </p><p> </p><p><a href="list">Go to List</a></p> <p> </p>
+		</body>
+	</html>
+	</Contents> 
+  </HtmlPage>
+
+  
+<HtmlPage name="normal">
+    <Contents cdata="true">
+	  <html>
+		<body>
+			<p><font color="#F5C347">/Trade</font></p>
+<p>Attempts to trade with the selected player.</p>
+<p> </p>
+			<p><font color="#F5C347">/PathFinding [NPC/Location],  /Where [NPC]</font></p>
+<p>Marks the map and displays the coordinates of a specific NPC or region.</p>
+<p>Ex) /pathfinding Elpas</p>
+<p> </p>
+			<p><font color="#F5C347">/Duel</font></p>
+<p>Requests a duel with the selected target.</p>
+<p> </p>
+			<p><font color="#F5C347">/Time</font></p>
+<p>Checks game time and real time.</p>
+<p> </p>
+			<p><font color="#F5C347">/Flight</font></p>
+<p>Enters flight mode.</p>
+<p> </p>
+			<p><font color="#F5C347">/Help, /H, /?</font></p>
+<p>Opens Help and Support Window.</p>
+<p> </p>
+			<p><font color="#F5C347">/CheckEntry</font></p>
+<p>Shows a list of time limit dungeons you can enter, and the remaining reentry time. </p>
+<p> </p>
+			<p><font color="#F5C347">/Ping</font></p>
+<p>Displays the status of your network.</p>
+<p> </p>
+			<p><font color="#F5C347">/ManagePrivateChannel</font></p>
+<p>Brings up a popup Private Channel Management Window.</p>
+<p> </p>
+			<p><font color="#F5C347">/Escape</font></p>
+<p>Allows a character that is stuck to use the Escape skill.</p>
+<p> </p>
+			<p> </p><p> </p><p><a href="list">Go to List</a></p> <p> </p>
+		</body>
+	</html>
+	</Contents> 
+  </HtmlPage>
+  
+<HtmlPage name="chat">
+    <Contents cdata="true">
+	  <html>
+		<body>
+			<p><font color="#F5C347">/Say, /s</font></p>
+<p>Changes to normal chat mode. Nearby players receive normal chat.</p>
+<p> </p>
+			<p><font color="#F5C347">/Group, /g</font></p>
+<p>Changes to group chat mode. Only your group receives group chat.</p>
+<p> </p>
+			<p><font color="#F5C347">/Alliance, /a</font></p>
+<p>Changes to Alliance chat mode. The entire Alliance receives Alliance chat.</p>
+<p> </p>
+			<p><font color="#F5C347">/Legion, /L</font></p>
+<p>Changes to Legion chat mode. Your entire Legion receives Legion chat.</p>
+<p> </p>
+			<p><font color="#F5C347">/League</font></p>
+<p>Changes to League chat mode. Allows League Leaders to communicate with Alliance Captains.</p>
+<p> </p>
+			<p><font color="#F5C347">/Shout</font></p>
+<p>Changes to Shout chat mode. Nearby players receive Shouted chat.</p>
+<p> </p>
+			<p><font color="#F5C347">/Whisper [CharacterName], /w [CharacterName]</font></p>
+<p>Sends a Whisper to a character. Only that character receives your Whispered chat.</p>
+<p> </p>
+			<p><font color="#F5C347">/Alert [Message]</font></p>
+<p>Changes to Alert chat mode. Sends the message to the chat window and the HUD of all Alliance/group members. (Group leaders, Alliance captains and Alliance vice captains only)</p>
+<p> </p>
+			<p><font color="#F5C347">/1</font></p>
+<p>Enters the Local Channel.</p>
+<p> </p>
+			<p><font color="#F5C347">/2</font></p>
+<p>Enters the Trade Channel.</p>
+<p> </p>
+			<p><font color="#F5C347">/3</font></p>
+<p>Enters the LFG (Looking for Group) Channel.</p>
+<p> </p>
+			<p><font color="#F5C347">Private Channel Command</font></p>
+<p>When you press the &lt;Enter&gt; key to open the Chat window and then click the Speech Bubble icon, it opens a pop-up menu. You can see private channel commands when you select &lt;Manage Private Chat&gt;.</p>
+<p> </p>
+			<p><font color="#F5C347">/ChannelNotification [Number] [Message]</font></p>
+<p>The chat leader sends an alert message to all members.</p>
+<p>Ex) /ChannelNotification 4 Everyone get ready to charge! </p>
+<p> </p>
+			<p> </p><p> </p><p><a href="list">Go to List</a></p> <p> </p>
+		</body>
+	</html>
+	</Contents> 
+  </HtmlPage>
+
+</HtmlPages>
