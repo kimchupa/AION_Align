@@ -1,80 +1,67 @@
 package aion.chupa;
 
 import java.io.File;
+import java.util.ArrayList;
 
 
 
 public class AION_FileList {
 
-	private File sourcePath;
-	private String currentFile;
-	private int fileNum = 0;
+	private ArrayList<String> sourceFileList = new ArrayList<String>();
+	private ArrayList<String> targetFileList = new ArrayList<String>();
 
 
-
-	AION_FileList(File sourceDir) {
-
-		sourcePath = sourceDir;
+	
+	AION_FileList(File sourceFilePath, File targetFilePath) {
+		
+		sourceFileList(sourceFilePath);
+		
 	}
 
-	public void fileList(File source){
+	public void sourceFileList(File FilePath){
 
-		File[] sourcefList = source.listFiles();
-
+		File[] sourcefList = FilePath.listFiles();
+		System.out.println(FilePath);
 		for (File sourcefile : sourcefList){
-
+			
 			if (sourcefile.isFile()){			
 				System.out.println(sourcefile.getPath() + "\r\n");
+				sourceFileList.add(sourcefile.getPath());
+				
 			}
 
 			else if (sourcefile.isDirectory()){
-				fileList(sourcefile);
+				sourceFileList(sourcefile);
+			}
+		}
+	}
+	
+	public void targetFileList(File target){
+
+		File[] targetfList = target.listFiles();
+
+		for (File targetfile : targetfList){
+
+			if (targetfile.isFile()){			
+				//System.out.println(sourcefile.getPath() + "\r\n");
+				targetFileList.add(targetfile.getPath());
+				
+			}
+
+			else if (targetfile.isDirectory()){
+				targetFileList(targetfile);
 			}
 		}
 	}
 
-
-
-
-
-
-	public File getSourcePath() {
-		return sourcePath;
+	public ArrayList<String> getsourceFileList() {
+		// TODO Auto-generated method stub
+		return sourceFileList;
 	}
-
-
-
-
-	public void setSourcePath(File sourcePath) {
-		this.sourcePath = sourcePath;
+	
+	public ArrayList<String> gettargetFileList() {
+		// TODO Auto-generated method stub
+		return targetFileList;
 	}
-
-
-
-
-	public String getCurrentFile() {
-		return currentFile;
-	}
-
-
-
-
-	public void setCurrentFile(String currentFile) {
-		this.currentFile = currentFile;
-	}
-
-
-
-
-	public int getFileNum() {
-		return fileNum;
-	}
-
-
-
-
-	public void setFileNum(int fileNum) {
-		this.fileNum = fileNum;
-	}
-
+	
 }
