@@ -16,13 +16,12 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 public class AION_FileOut {
 
 	
-	private Map aionDataout;
+	private Map<Integer, Object[]> aionDataout;
 	
 	
-	AION_FileOut(Map aionData) {
+	AION_FileOut(Map<Integer, Object[]> aionData) {
 		
 		aionDataout = aionData;
-		XlsxOut();
 	}
 
 	public void XlsxOut(){
@@ -65,7 +64,7 @@ public class AION_FileOut {
 		
 		try{
 			
-			File fileOut = new File("test/out.xlsx");
+			File fileOut = new File("test/out2.xlsx");
 			if(!fileOut.exists()) {
 				fileOut.getParentFile().mkdirs();
 			}
