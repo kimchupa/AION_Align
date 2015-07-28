@@ -19,9 +19,9 @@ public class AION_FileOut {
 	private Map<Integer, Object[]> aionDataout;
 	
 	
-	AION_FileOut(Map<Integer, Object[]> aionData) {
+	AION_FileOut(Map<Integer, Object[]> data) {
 		
-		aionDataout = aionData;
+		aionDataout = data;
 	}
 
 	public void XlsxOut(){
@@ -40,7 +40,8 @@ public class AION_FileOut {
 		Row header = sheet.createRow(0);
 		header.createCell(0).setCellValue("FileName");
 		header.createCell(1).setCellValue("ID");
-		header.createCell(2).setCellValue("Text");
+		header.createCell(2).setCellValue("Source");
+		header.createCell(3).setCellValue("Target");
 
 		Set<Integer> keyset = aionDataout.keySet();
 		
@@ -64,7 +65,7 @@ public class AION_FileOut {
 		
 		try{
 			
-			File fileOut = new File("test/out2.xlsx");
+			File fileOut = new File("test/out.xlsx");
 			if(!fileOut.exists()) {
 				fileOut.getParentFile().mkdirs();
 			}

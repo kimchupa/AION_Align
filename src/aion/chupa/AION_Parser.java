@@ -6,8 +6,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.json.simple.JSONObject;
-
 import com.jaunt.Element;
 import com.jaunt.Elements;
 import com.jaunt.JauntException;
@@ -17,12 +15,14 @@ public class AION_Parser {
 
 
 	private ArrayList<String> fileList = new ArrayList<String>();
-	private JSONObject aionTextData;
+	private ArrayList<String> fileName = new ArrayList<String>();
+	private Map<Integer, AION_Data> aionData = new HashMap<Integer, AION_Data>();
 
 
-	public AION_Parser(ArrayList<String> fileList) {
+	public AION_Parser(ArrayList<String> list, ArrayList<String> name) {
 
-		this.fileList = fileList;
+		this.fileList = list;
+		this.fileName = name;
 
 	}
 
@@ -30,25 +30,30 @@ public class AION_Parser {
 
 		try{
 
-			//Map<Integer, Object[]> textData = new HashMap<Integer, Object[]>();
-			JSONObject jsonData = new JSONObject();
+			System.out.println("Parsing Started...");
+			Map<Integer, AION_Data> textData = new HashMap<Integer, AION_Data>();
 
 			UserAgent userAgent = new UserAgent();
 			userAgent.settings.charset = "UTF-16";
 			int key = 0;
+			int filelistSize = fileList.size();
+			System.out.println("Number of Files: " + filelistSize);
 			for(int i = 0; i < fileList.size(); i++) {
 
+				if(filelistSize%1000 == 0){
+					System.out.println(filelistSize);
+				}
+				
+				filelistSize--;
+				
 				userAgent.open(new File(fileList.get(i)));  //open the HTML (or XML) from a file
-				String fileName = fileList.get(i);
-				//System.out.println("\n" + fileList.get(i));
+				String fileNames = fileName.get(i);
 
 
 				Elements HtmlPage = userAgent.doc.findEach("<HtmlPage>");
 				int htmlc = 0;
-				
+								
 				for(Element HtmlPages : HtmlPage) {
-
-
 					
 					int pc = 0;
 					int actc = 0;
@@ -63,27 +68,29 @@ public class AION_Parser {
 						if((p_acts.outerHTML().contains("<p"))&&(!p_acts.innerHTML().matches("\\s+|^$"))){
 							pc++;
 							key++;
-							//System.out.println(fileName+"\t"+"["+htmlc+"h"+pc+"p]" + p_acts.innerHTML());
-							jsonData.put("filename", fileName);
-							jsonData.put("id", htmlc +"h"+pc+"p");
-							jsonData.put("textdata", p_acts.innerHTML());
-							System.out.print(jsonData);
+							//System.out.println(fileNames+"\t"+"["+htmlc+"h"+pc+"p]" + p_acts.innerHTML());
+							textData.put(key, new AION_Data(fileNames, fileNames + htmlc +"h"+pc+"p", p_acts.innerHTML()));
+							//System.out.print(textData.get(key).getFilename());
+							//System.out.print(textData.get(key).getIdData());
+							//System.out.println(textData.get(key).getTextData());
 
 						}
 						else if((p_acts.outerHTML().contains("<Act"))&&(!p_acts.innerHTML().matches("\\s+|^$"))){
 							actc++;
 							key++;
-							//System.out.println(fileName+"\t"+"["+htmlc+"h"+actc+"a]" + p_acts.innerHTML());
-							jsonData.put("filename", fileName);
-							jsonData.put("id", htmlc +"h"+pc+"a");
-							jsonData.put("textdata", p_acts.innerHTML());
-							System.out.print(jsonData);
+							//System.out.println(fileNames+"\t"+"["+htmlc+"h"+actc+"a]" + p_acts.innerHTML());
+							textData.put(key, new AION_Data(fileNames, fileNames + htmlc +"h"+actc+"a", p_acts.innerHTML()));
+							//System.out.print(textData.get(key).getFilename());
+							//System.out.print(textData.get(key).getIdData());
+							//System.out.println(textData.get(key).getTextData());
+
 						}
 					}
 				}
 			}
 			
-			this.aionTextData = jsonData;
+			System.out.println("Number of p and act: " + key);
+			this.aionData = textData;
 
 		}
 		catch(JauntException | IOException e){
@@ -91,14 +98,27 @@ public class AION_Parser {
 		}
 	}
 
-	public JSONObject getaionTextData() {
-		return aionTextData;
-	}
 	public ArrayList<String> getFileList() {
 		return fileList;
 	}
 	public void setFileList(ArrayList<String> fileList) {
 		this.fileList = fileList;
+	}
+
+	public Map<Integer, AION_Data> getAIONData() {
+		return aionData;
+	}
+
+	public void setAionData(Map<Integer, AION_Data> aionData) {
+		this.aionData = aionData;
+	}
+
+	public ArrayList<String> getFileName() {
+		return fileName;
+	}
+
+	public void setFileName(ArrayList<String> fileName) {
+		this.fileName = fileName;
 	}
 
 }
